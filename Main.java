@@ -35,5 +35,16 @@ public class Main {
 
         j1.cancelaTraspaso();
         System.out.println("Estado actual: " + j1.traspasoSolicitado());
+
+        System.out.println(eq1.toString());
+
+        eq1.transferirJugador(j1, eq2);
+
+        j1.solicitaTraspaso();
+        eq1.transferirJugador(j1, eq2);
+
+        eq1.verPlantilla();
+        eq2.verPlantilla();
+
     }
 }

@@ -27,6 +27,26 @@ public class Equipo {
     public void setNombre(String nombre) {this.nombre= nombre;}
 
     public String toString() {
-        return "EQUIPO: " + nombre;
+        String nombreEntrenador = (entrenador!= null)? entrenador.getNombre() : "Sin entrenador";
+        return "EQUIPO: " + nombre + "ENTRENADOR: " + nombreEntrenador + "Nº JUGADORES: " + jugadores.size();
     }
+
+    public void verPlantilla() {
+            System.out.println("Plantilla del " + this.nombre);
+            for(Jugador j: jugadores) {
+                System.out.println(j.toString());
+            }
+        }
+
+        public void transferirJugador(Jugador jug, Equipo destino) {
+            if (this.jugadores.contains(jug)&& jug.traspasoSolicitado()) {
+                this.jugadores.remove(jug);
+                destino.añadirJugador(jug);
+                jug.cancelaTraspaso();
+
+                System.out.println("Traspaso realizado: El jugador " + jug.getNombre() + " ahora juega en " + destino.getNombre());
+            } else {
+                System.out.println("Traspaso no no realizado: El jugador no pertenece al equipo o no ha solicitado el traslado");
+            }
+        }
 }
