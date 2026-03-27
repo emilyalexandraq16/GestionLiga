@@ -1,6 +1,9 @@
 import java.time.LocalDate;
-/** Clase para representar un jugador de la Liga */
+/** Clase para representar un jugador de la Liga 
+ * Contiene informacion del jugador, posicion y estado de traspaso
+*/
 public class Jugador {
+    /**Contador de jugadores instanciados */
     public static int contadorJug= 0;
     private String nombre;
     private LocalDate fechaNacimiento;
@@ -21,33 +24,41 @@ public class Jugador {
         this.traspasoSolicitado= false;
         contadorJug++;
     }
-
+/** Activa la solicitud de traspaso de un jugador y muestra un mensaje informando sobre ello */
     public void solicitaTraspaso() {
         this.traspasoSolicitado= true;
         System.out.println("El jugador " + this.nombre + " ha solicitado un traspaso.");
     }
 
+/** @Cancela la solicitud de traspaso del jugador*/
+
     public void cancelaTraspaso() {
         this.traspasoSolicitado= false;
         System.out.println("El jugador " + this.nombre + " ha cancelado su solicitud de traspaso.");
     }
-
+/** @return El nombre del jugador*/
     public String getNombre() {return nombre;}
     public void setNombre(String nombre) {this.nombre= nombre;}
 
+/** @return La fecha de nacimiento del jugador*/
     public LocalDate getFechaNacimiento() {return fechaNacimiento;}
     public void setFechaNacimiento(LocalDate fechaNacimiento) {this.fechaNacimiento= fechaNacimiento;}
 
+/** @return La posicion del jugador*/
     public String getPosicion() {return posicion;}
     public void setPosicion (String posicion) {this.posicion= posicion;}
+
+/** @return Se obtiene true si el juegador ha solicitado un traspaso, si no se obtiene false*/
 
     public boolean traspasoSolicitado() {return traspasoSolicitado;}
     public void setTraspasoSolicitado(boolean traspasoSolicitado) {this.traspasoSolicitado= traspasoSolicitado;}
 
+    @Override
     public String toString() {
         return "JUGADOR: " + nombre + " FECHA DE NACIMIENTO: " + fechaNacimiento + " POSICION: " + posicion + " TRASPASO: " + (traspasoSolicitado ? "si" : "no");
     }
 
+/** @return Cantidad de jugadores instanciados*/
     public static int getContadorJug() {
         return contadorJug;
     }

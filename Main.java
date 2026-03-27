@@ -1,6 +1,16 @@
 import java.time.LocalDate;
 
+/**
+ * Clase principal que inicia la aplicacion de gestion de Liga
+ * Instancia objetos iniciales y hace pruebas 
+ */
+
 public class Main {
+
+    /**
+     * Entrada principal del programa
+     * @param args Argumentos de la linea de comandos
+     */
     public static void main (String []args) {
         Entrenador e1= new Entrenador("Carlo Ancelotti", "4-3-3");
         Entrenador e2= new Entrenador("Xavi Hernandez", "4-3-3");
