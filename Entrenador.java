@@ -16,4 +16,8 @@ public class Entrenador{
 
     public String getFormacionPref() {return formacionPref;}
     public void setFormacionPreferida(String formacionPref) {this.formacionPref=formacionPref;}
+
+    public String toString() {
+        return "ENTRENADOR: " + nombre + " FORMACION: " + formacionPref;
+    }
 }

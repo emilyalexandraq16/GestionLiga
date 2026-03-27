@@ -31,4 +31,8 @@ public class Jugador {
 
     public boolean traspasoSolicitado() {return traspasoSolicitado;}
     public void setTraspasoSolicitado(boolean traspasoSolicitado) {this.traspasoSolicitado= traspasoSolicitado;}
+
+    public String toString() {
+        return "JUGADOR: " + nombre + " FECHA DE NACIMIENTO: " + fechaNacimiento + " POSICION: " + posicion + " TRASPASO: " + (traspasoSolicitado ? "si" : "no");
+    }
 }
