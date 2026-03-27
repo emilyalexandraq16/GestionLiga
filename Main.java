@@ -1,0 +1,19 @@
+import java.time.LocalDate;
+
+public class Main {
+    public static void main (String []args) {
+        Entrenador e1= new Entrenador("Carlo Ancelotti", "4-3-3");
+        Entrenador e2= new Entrenador("Xavi Hernandez", "4-3-3");
+
+        Equipo eq1= new Equipo("Real Madrid");
+        Equipo eq2= new Equipo("FC Barcelona");
+
+        Jugador j1= new Jugador("Luka Modric", LocalDate.of(1985, 9, 9), "Centrocampista");
+        Jugador j2= new Jugador("Vinicius Jr", LocalDate.of(2000, 7, 12), "Delantero");
+        Jugador j3= new Jugador("Thibaut Courtois", LocalDate.of(1992, 5, 11), "Portero");
+        Jugador j4= new Jugador("Robert Lewandowski", LocalDate.of(1988, 8, 21), "Delantero");
+        Jugador j5= new Jugador("Pedri", LocalDate.of(2002, 11, 25), "Centrocampista");
+
+        
+    }
+}
