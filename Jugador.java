@@ -1,6 +1,7 @@
 import java.time.LocalDate;
 /** Clase para representar un jugador de la Liga */
 public class Jugador {
+    public static int contadorJug= 0;
     private String nombre;
     private LocalDate fechaNacimiento;
     private String posicion;
@@ -18,6 +19,7 @@ public class Jugador {
         this.fechaNacimiento= fechaNacimiento;
         this.posicion= posicion;
         this.traspasoSolicitado= false;
+        contadorJug++;
     }
 
     public void solicitaTraspaso() {
@@ -44,5 +46,9 @@ public class Jugador {
 
     public String toString() {
         return "JUGADOR: " + nombre + " FECHA DE NACIMIENTO: " + fechaNacimiento + " POSICION: " + posicion + " TRASPASO: " + (traspasoSolicitado ? "si" : "no");
+    }
+
+    public static int getContadorJug() {
+        return contadorJug;
     }
 }

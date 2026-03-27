@@ -46,5 +46,9 @@ public class Main {
         eq1.verPlantilla();
         eq2.verPlantilla();
 
+        System.out.println("Total de jugadores creados: " + Jugador.getContadorJug());
+        System.out.println("Total de entrenadores  creados: " + Entrenador.getContadorEntre());
+        System.out.println("Total de equipos creados: " + Equipo.getContadorEq());
+
     }
 }

@@ -5,6 +5,7 @@ import java.util.ArrayList;
  */
 
 public class Equipo {
+    private static int contadorEq=0;
     private String nombre;
     private Entrenador entrenador;
     private ArrayList<Jugador> jugadores;
@@ -13,6 +14,7 @@ public class Equipo {
         this.nombre= nombre;
         this.entrenador= null;
         this.jugadores= new ArrayList<Jugador>();
+        contadorEq++;
     }
 
     public void añadirJugador(Jugador j) {
@@ -32,21 +34,24 @@ public class Equipo {
     }
 
     public void verPlantilla() {
-            System.out.println("Plantilla del " + this.nombre);
-            for(Jugador j: jugadores) {
-                System.out.println(j.toString());
-            }
+        System.out.println("Plantilla del " + this.nombre);
+        for(Jugador j: jugadores) {
+            System.out.println(j.toString());
         }
+    }
 
-        public void transferirJugador(Jugador jug, Equipo destino) {
-            if (this.jugadores.contains(jug)&& jug.traspasoSolicitado()) {
-                this.jugadores.remove(jug);
-                destino.añadirJugador(jug);
-                jug.cancelaTraspaso();
+    public void transferirJugador(Jugador jug, Equipo destino) {
+        if (this.jugadores.contains(jug)&& jug.traspasoSolicitado()) {
+            this.jugadores.remove(jug);
+            destino.añadirJugador(jug);
+            jug.cancelaTraspaso();
 
-                System.out.println("Traspaso realizado: El jugador " + jug.getNombre() + " ahora juega en " + destino.getNombre());
-            } else {
-                System.out.println("Traspaso no no realizado: El jugador no pertenece al equipo o no ha solicitado el traslado");
-            }
+            System.out.println("Traspaso realizado: El jugador " + jug.getNombre() + " ahora juega en " + destino.getNombre());
+        } else {
+            System.out.println("Traspaso no no realizado: El jugador no pertenece al equipo o no ha solicitado el traslado");
         }
+    }
+    public static int getContadorEq() {
+        return contadorEq;
+    }
 }
