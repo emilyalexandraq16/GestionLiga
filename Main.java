@@ -29,5 +29,11 @@ public class Main {
         eq2.añadirJugador(j5);
 
         System.out.println("Plantilla del " + eq1.getNombre() + " configurada.");
+
+        j1.solicitaTraspaso();
+        System.out.println("Estado actual: " + j1.traspasoSolicitado());
+
+        j1.cancelaTraspaso();
+        System.out.println("Estado actual: " + j1.traspasoSolicitado());
     }
 }

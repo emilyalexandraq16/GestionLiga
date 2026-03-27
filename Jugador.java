@@ -20,6 +20,16 @@ public class Jugador {
         this.traspasoSolicitado= false;
     }
 
+    public void solicitaTraspaso() {
+        this.traspasoSolicitado= true;
+        System.out.println("El jugador " + this.nombre + " ha solicitado un traspaso.");
+    }
+
+    public void cancelaTraspaso() {
+        this.traspasoSolicitado= false;
+        System.out.println("El jugador " + this.nombre + " ha cancelado su solicitud de traspaso.");
+    }
+
     public String getNombre() {return nombre;}
     public void setNombre(String nombre) {this.nombre= nombre;}
 
