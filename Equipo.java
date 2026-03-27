@@ -1,9 +1,13 @@
+import java.util.ArrayList;
+
 /**
  * Clase que representa un equipo de la Liga
  */
 
 public class Equipo {
     private String nombre;
+    private Entrenador entrenador;
+    private ArrayList<Jugador> jugadores;
 
     public Equipo (String nombre) {
         this.nombre= nombre;
